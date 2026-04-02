@@ -5,15 +5,19 @@
 
   <style>
     body {
-      background-color: lightblue;
+      background-color: #f5f5dc; /* color hueso */
       font-family: Arial, sans-serif;
       text-align: center;
+    }
+
+    h1 {
+      margin-top: 30px;
     }
 
     .widget {
       margin: 40px auto;
       width: 90%;
-      max-width: 500px;
+      max-width: 600px;
     }
   </style>
 </head>
@@ -23,10 +27,10 @@
   <h1>☕ Finanzas & Café</h1>
   <p>Avanzando de a poco...</p>
 
-  <h2>📊 Índices en vivo</h2>
+  <h2>📊 Índices globales</h2>
 
   <div class="widget">
-    <!-- TradingView Widget BEGIN -->
+    <!-- TradingView Widget -->
     <div class="tradingview-widget-container">
       <div class="tradingview-widget-container__widget"></div>
 
@@ -42,15 +46,16 @@
           {
             "title": "Índices",
             "symbols": [
-              { "s": "SP:SPX", "d": "S&P 500" },
-              { "s": "BCBA:IMV", "d": "S&P Merval" }
+              { "s": "SP:SPX", "d": "S&P 500 (USD)" },
+              { "s": "DJ:DJI", "d": "Dow Jones (USD)" },
+              { "s": "BCBA:IMV", "d": "S&P Merval (ARS)" },
+              { "s": "BMFBOVESPA:IBOV", "d": "Ibovespa (BRL)" }
             ]
           }
         ]
       }
       </script>
     </div>
-    <!-- TradingView Widget END -->
   </div>
 
 </body>
