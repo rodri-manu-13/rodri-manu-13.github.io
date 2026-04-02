@@ -7,5 +7,30 @@
   <body> 
     <h1>Valor dólar actualizado</h1>
     <p>Avanzando de a poco...</p>
+
+    <h2>Mercados en vivo</h2>
+
+<!-- TradingView Widget -->
+<div class="tradingview-widget-container">
+  <div id="tradingview_widget"></div>
+
+  <script src="https://s3.tradingview.com/tv.js"></script>
+
+  <script>
+    new TradingView.MiniWidget({
+      "symbol": "SP:SPX",
+      "width": "350",
+      "height": "220",
+      "locale": "es",
+      "dateRange": "1D",
+      "colorTheme": "light",
+      "trendLineColor": "#37a6ef",
+      "underLineColor": "#E3F2FD",
+      "isTransparent": false,
+      "autosize": false
+    });
+  </script>
+</div>
+    
   </body>
 </html>
