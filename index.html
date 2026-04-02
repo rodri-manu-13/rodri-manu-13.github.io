@@ -2,43 +2,63 @@
 <html>
   <head>
     <title>Finanzas & Café</title>
+
+    <style>
+      body {
+        background-color: lightblue;
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+
+      h1 {
+        margin-top: 30px;
+      }
+
+      .widget {
+        margin: 30px auto;
+        width: 350px;
+      }
+    </style>
   </head>
+
   <body> 
-    <h1>Valor dólar actualizado</h1>
+    <h1>☕ Finanzas & Café</h1>
     <p>Avanzando de a poco...</p>
 
-    <h2>Mercados en vivo</h2>
+    <h2>📊 S&P 500</h2>
+    <div class="widget">
+      <div id="sp500_widget"></div>
+    </div>
 
-<!-- TradingView Widget -->
-<div class="tradingview-widget-container">
-  <div id="tradingview_widget"></div>
+    <h2>📊 S&P Merval</h2>
+    <div class="widget">
+      <div id="merval_widget"></div>
+    </div>
 
-  <script src="https://s3.tradingview.com/tv.js"></script>
-
-  <script>
-    new TradingView.MiniWidget({
-      "symbol": "SP:SPX",
-      "width": "350",
-      "height": "220",
-      "locale": "es",
-      "dateRange": "1D",
-      "colorTheme": "light",
-      "trendLineColor": "#37a6ef",
-      "underLineColor": "#E3F2FD",
-      "isTransparent": false,
-      "autosize": false
-    });
-  </script>
-</div>
+    <!-- Script de TradingView -->
+    <script src="https://s3.tradingview.com/tv.js"></script>
 
     <script>
-  new TradingView.MiniWidget({
-    "symbol": "BCBA:IMV",
-    "width": "350",
-    "height": "220",
-    "locale": "es"
-  });
-</script>
-    
+      new TradingView.MiniWidget({
+        "container_id": "sp500_widget",
+        "symbol": "SP:SPX",
+        "width": "350",
+        "height": "220",
+        "locale": "es",
+        "dateRange": "1D",
+        "colorTheme": "light"
+      });
+
+      new TradingView.MiniWidget({
+        "container_id": "merval_widget",
+        "symbol": "BCBA:IMV",
+        "width": "350",
+        "height": "220",
+        "locale": "es",
+        "dateRange": "1D",
+        "colorTheme": "light"
+      });
+    </script>
+
   </body>
 </html>
