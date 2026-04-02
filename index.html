@@ -1,64 +1,57 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Finanzas & Café</title>
+<head>
+  <title>Finanzas & Café</title>
 
-    <style>
-      body {
-        background-color: lightblue;
-        font-family: Arial, sans-serif;
-        text-align: center;
-      }
+  <style>
+    body {
+      background-color: lightblue;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
 
-      h1 {
-        margin-top: 30px;
-      }
+    .widget {
+      margin: 40px auto;
+      width: 90%;
+      max-width: 500px;
+    }
+  </style>
+</head>
 
-      .widget {
-        margin: 30px auto;
-        width: 350px;
-      }
-    </style>
-  </head>
+<body>
 
-  <body> 
-    <h1>☕ Finanzas & Café</h1>
-    <p>Avanzando de a poco...</p>
+  <h1>☕ Finanzas & Café</h1>
+  <p>Avanzando de a poco...</p>
 
-    <h2>📊 S&P 500</h2>
-    <div class="widget">
-      <div id="sp500_widget"></div>
-    </div>
+  <h2>📊 Índices en vivo</h2>
 
-    <h2>📊 S&P Merval</h2>
-    <div class="widget">
-      <div id="merval_widget"></div>
-    </div>
+  <div class="widget">
+    <!-- TradingView Widget BEGIN -->
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
 
-    <!-- Script de TradingView -->
-    <script src="https://s3.tradingview.com/tv.js"></script>
-
-    <script>
-      new TradingView.MiniWidget({
-        "container_id": "sp500_widget",
-        "symbol": "SP:SPX",
-        "width": "350",
-        "height": "220",
-        "locale": "es",
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
+      {
+        "colorTheme": "light",
         "dateRange": "1D",
-        "colorTheme": "light"
-      });
-
-      new TradingView.MiniWidget({
-        "container_id": "merval_widget",
-        "symbol": "BCBA:IMV",
-        "width": "350",
-        "height": "220",
+        "showChart": false,
         "locale": "es",
-        "dateRange": "1D",
-        "colorTheme": "light"
-      });
-    </script>
+        "width": "100%",
+        "height": "400",
+        "tabs": [
+          {
+            "title": "Índices",
+            "symbols": [
+              { "s": "SP:SPX", "d": "S&P 500" },
+              { "s": "BCBA:IMV", "d": "S&P Merval" }
+            ]
+          }
+        ]
+      }
+      </script>
+    </div>
+    <!-- TradingView Widget END -->
+  </div>
 
-  </body>
+</body>
 </html>
